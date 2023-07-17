@@ -1,0 +1,272 @@
+
+
+nav {
+    background-color: #f2f2f2;
+    padding: 10px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  /* Style the navigation links */
+  nav a {
+    color: #333;
+    text-decoration: none;
+    padding: 8px 16px;
+    margin: 0 5px;
+  }
+
+  /* Change the color of the navigation links on hover */
+  nav a:hover {
+    background-color: #ddd;
+  }
+
+  .stageListView {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* background-color: #bdbdbd; */
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 400;
+  }
+  .stageListView div {
+    justify-content: space-between;
+  }
+
+  .jobTitle {
+    background-color: #bdbdbd;
+    padding: 0rem 1rem;
+  }
+
+  .stageListView p {
+    margin-top: 0.25rem;
+    
+  }
+
+.inputForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30rem;
+  margin: 0 auto;
+}
+
+.inputConstrain {
+  width: 20rem;
+  display: flex;
+}
+
+.inputSection {
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+}
+
+.inputSection div {
+  padding: 0.25rem;
+}
+
+.inputSection input, label {
+  margin: 0.25rem;
+} 
+
+
+
+.jobListItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 40rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0.5rem;
+}
+
+.jobListItem div {
+  padding: 0rem 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.jobListItem > section .processSection {
+  color: red;
+  display: flex;
+  justify-content: space-between;
+  align-items: none;
+}
+
+.startAndEndDates p {
+  margin: 0.25rem;
+}
+
+  h3{
+    display: flex;
+    /* justify-content: center; */
+    justify-content: flex-start;
+    margin: 0.5rem 0rem;
+    
+  }
+
+  .delIcon {
+    /* color: red; */
+    margin-left: 1rem;
+    cursor: pointer;
+  }
+
+  .editIcon {
+    cursor: pointer;
+    
+  }
+
+  .editIcon:hover, .delIcon:hover {
+    color: red;
+  }
+
+  .myModal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 50px;
+    z-index: 1000;
+    max-height: 100vh;
+    overflow-y: auto;
+  }
+
+
+  .myModal button {
+    margin: 0.5rem;
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0 ,0, 0.7);
+    z-index: 1000;
+  }
+
+  
+  .inputForm p {
+    display: inline;
+    margin: 0;
+  }
+
+.calSwitch {
+  margin: 0.5rem;
+}
+
+.calendarDisplay {
+  width: 60rem;
+  margin: auto;
+}
+
+.jobTitleArea {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.individualJobsListView {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+  width: 40rem;
+}
+
+hr {
+  border-top: 5px solid rgb(160, 160, 160);
+  border-radius: 3px;
+  margin-bottom: 1.5rem;
+}
+
+.jobListMainPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.collapse-content-layout {
+  display: flex;
+}
+
+.collapse-content {
+  padding-right: 2rem;
+  padding-left: 2rem;
+}
+
+.editAndDeleteIcons {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.jobListTitleAreaFormat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
+
+}
+
+.jobListTitleAreaFormat section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1rem;
+}
+
+.rbc-time-column {
+  display: none;
+}
+
+.rbc-time-header {
+  min-height: 150px;
+}
+
+.rbc-btn-group:last-child {
+  display: none;
+}
+
+.colorKey {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.colorKey > h4 {
+  margin-right: 0.5rem;
+}
+
+.buttonAdjust {
+  display: flex;
+}
+
+.myModal > .buttonPosition {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.homeCalContainer {
+  width: 60rem;
+  margin: auto;
+}
+
+.colorKeyContainer {
+  padding: 1rem;
+  width: 60rem;
+  margin: auto;
+}
+
+.colorKeyContainer ul {
+  width: 10rem;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}

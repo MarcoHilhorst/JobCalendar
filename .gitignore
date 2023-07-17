@@ -1,0 +1,13 @@
+# Server files to ignore
+/server/.env
+/server/node_modules
+/server/config
+
+# Client files to ignore
+/client/job-planner/node_modules
+/client/job-planner/public/favicon.ico
+/client/job-planner/public/logo192.png
+/client/job-planner/public/logo512.png
+/client/job-planner/public/robots.txt
+/client/job-planner/README.md
+
