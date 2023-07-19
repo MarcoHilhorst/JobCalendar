@@ -34,7 +34,7 @@ const CheekyNav = () => {
     </ul>
   </div>
   <div class="navbar-end">
-    <a class="btn">Button</a>
+    <a class="btn"><Link to="/login" >Login</Link></a>
   </div>
 </div>
   )

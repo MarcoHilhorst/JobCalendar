@@ -5,7 +5,8 @@ import  Home  from "./pages/home";
 import  Cal  from './pages/cal'
 // import NavBar from './components/NavBar'
 import Joblist from './pages/joblist'
-import CheekyNav from './components/CheekyNav';
+import CheekyNav from './components/CheekyNav'
+import Login from './pages/login'
 
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
           <Route path='/' element={<Home jobs={jobs} fetchJobs={fetchJobs}/>} />
           <Route path='/cal' element={<Cal jobs={jobs} fetchJobs={fetchJobs}/>} />
           <Route path='/joblist' element={<Joblist />} />
+          <Route path='/login' element={<Login />} />
         </Routes>
     </div>
     </Router>
