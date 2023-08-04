@@ -22,6 +22,8 @@ function App() {
       const res = await fetch('//localhost:3001/joblist')
       const data = await res.json()
       setJobs(data) 
+      console.log(data)
+      
     }
     catch (err){
       console.error(err)

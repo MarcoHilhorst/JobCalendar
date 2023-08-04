@@ -5,6 +5,7 @@ const joblistController = {
     getJobs: async (req, res) => {
         try {
             const allJobs = await JobModel.find()
+            console.log("updated from job list", allJobs)
             res.json(allJobs)
         }
         catch (err) {

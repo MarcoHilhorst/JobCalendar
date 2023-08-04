@@ -6,6 +6,7 @@ const homeController = {
         try {
             const allJobs = await JobModel.find()
             res.json(allJobs)
+            console.log(allJobs)
         }
         catch (err) {
             console.log(err)

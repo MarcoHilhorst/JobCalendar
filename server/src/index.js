@@ -1,12 +1,13 @@
 import express from "express"
 import cors from "cors"
-import mongoose, { Mongoose } from "mongoose"
+import mongoose from "mongoose"
 import dotenv from 'dotenv'
 dotenv.config()
 
 import {homeRouter} from './routes/home.js'
 import {joblistRouter} from './routes/joblistRoutes.js'
 import { calRouter } from "./routes/calRoutes.js"
+import { userRouter } from "./routes/userRouter.js"
 
 
 
@@ -20,6 +21,7 @@ mongoose.connect(process.env.DB_CONNECTION_STRING, {useUnifiedTopology: true})
 app.use('/', homeRouter)
 app.use('/joblist', joblistRouter)
 app.use('/cal', calRouter)
+app.use('/user', userRouter)
 
 
 app.listen(3001, () =>{

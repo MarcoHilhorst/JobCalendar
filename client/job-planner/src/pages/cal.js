@@ -16,9 +16,9 @@ const Cal = ({ jobs, fetchJobs }) => {
   const [showAssembly, setShowAssembly] = useState(false)
   const [showInstallation, setShowInstallation] = useState(false)
   const [showManufacturing, setShowManufacturing] = useState(false)
-  useEffect(() => {
-    fetchJobs()
-  })
+  // useEffect(() => {
+  //   // fetchJobs()
+  // })
 
   const toggleAssembly = () => {
     setShowAssembly(true)
