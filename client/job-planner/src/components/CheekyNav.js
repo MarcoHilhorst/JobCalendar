@@ -1,7 +1,19 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { useCookies } from 'react-cookie' 
+
 
 const CheekyNav = () => {
+  const [cookies, setCookies] = useCookies(['access_token'])
+  const navigate = useNavigate()
+
+  const logout = () => {
+    setCookies("access_token", "")
+    window.localStorage.removeItem("userID")
+    navigate('/user')
+
+  }
+
   return (
     <div class="navbar bg-base-100">
   <div class="navbar-start">
@@ -34,7 +46,9 @@ const CheekyNav = () => {
     </ul>
   </div>
   <div class="navbar-end">
-    <a class="btn"><Link to="/login" >Login</Link></a>
+    
+    <a class="btn"> {!cookies.access_token ? (<Link to="/user" >Login</Link>) : (<button onClick={logout}>Logout</button>)}
+      </a>
   </div>
 </div>
   )

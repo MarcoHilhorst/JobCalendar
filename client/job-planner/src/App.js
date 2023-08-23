@@ -3,10 +3,9 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { useEffect, useState } from 'react'
 import  Home  from "./pages/home";
 import  Cal  from './pages/cal'
-// import NavBar from './components/NavBar'
 import Joblist from './pages/joblist'
 import CheekyNav from './components/CheekyNav'
-import Login from './pages/login'
+import User from './pages/user';
 
 
 function App() {
@@ -40,7 +39,7 @@ function App() {
           <Route path='/' element={<Home jobs={jobs} fetchJobs={fetchJobs}/>} />
           <Route path='/cal' element={<Cal jobs={jobs} fetchJobs={fetchJobs}/>} />
           <Route path='/joblist' element={<Joblist />} />
-          <Route path='/login' element={<Login />} />
+          <Route path='/user' element={<User />} />
         </Routes>
     </div>
     </Router>
