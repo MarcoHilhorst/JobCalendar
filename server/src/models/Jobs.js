@@ -12,6 +12,7 @@ const JobSchema = new mongoose.Schema({
     stage3: {type: Number, required: true},
     stage3Start: {type: Date, required: true},
     stage3End: {type: Date, required: true},
+    userID: {type: String, required: false}
 })
 
 export const JobModel = mongoose.model("jobs", JobSchema)

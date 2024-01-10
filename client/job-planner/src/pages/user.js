@@ -67,6 +67,7 @@ const Login = () => {
                     setCookies("access_token", data.token);
                     window.localStorage.setItem("userID", data.userID)
                     navigate('/')
+                    window.location.reload(false);
                 }
             })
            

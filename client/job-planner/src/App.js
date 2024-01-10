@@ -6,6 +6,7 @@ import  Cal  from './pages/cal'
 import Joblist from './pages/joblist'
 import CheekyNav from './components/CheekyNav'
 import User from './pages/user';
+import Dnd from './components/Dnd';
 
 
 function App() {
@@ -18,7 +19,7 @@ function App() {
 
   const fetchJobs = async() => {
     try {
-      const res = await fetch('//localhost:3001/joblist')
+      const res = await fetch(`//localhost:3001/joblist?user=${localStorage.getItem('userID')}`)
       const data = await res.json()
       setJobs(data) 
       console.log(data)
@@ -37,8 +38,9 @@ function App() {
     {/* <NavBar /> */}
         <Routes>
           <Route path='/' element={<Home jobs={jobs} fetchJobs={fetchJobs}/>} />
-          <Route path='/cal' element={<Cal jobs={jobs} fetchJobs={fetchJobs}/>} />
-          <Route path='/joblist' element={<Joblist />} />
+          {/* <Route path='/cal' element={<Cal jobs={jobs} fetchJobs={fetchJobs}/>} /> */}
+          <Route path='/cal' element={<Dnd/>} />
+          <Route path='/joblist' element={<Joblist tasks={jobs}refreshList={fetchJobs}/>} />
           <Route path='/user' element={<User />} />
         </Routes>
     </div>

@@ -6,6 +6,7 @@ const router = express.Router()
 
 
 router.get('/', joblistController.getJobs)
+// router.get('/:userID', joblistController.getMyJobs)
 router.delete('/:id', joblistController.deleteJob)
 router.put('/:id', joblistController.updateJob)
 

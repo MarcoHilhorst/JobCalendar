@@ -4,7 +4,9 @@ const joblistController = {
     
     getJobs: async (req, res) => {
         try {
-            const allJobs = await JobModel.find()
+            const allJobs = await JobModel.find({
+                userID: req.query.user
+            })
             console.log("updated from job list", allJobs)
             res.json(allJobs)
         }
@@ -37,6 +39,7 @@ const joblistController = {
                     stage3: req.body.stage3,
                     stage3Start: req.body.stage3Start, 
                     stage3End: req.body.stage3End, 
+                    userID: req.body.userID,
                 }}
                 )
                            

@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react'
 import JobList from '../components/JobList'
+import { useNavigate } from 'react-router-dom'
 
 
-const Joblist = () => {
+const Joblist = ({refreshList, tasks}) => {
 
   // Setting state for DB data
   const [jobs, setJobs] = useState([])
@@ -10,14 +11,18 @@ const Joblist = () => {
   // Fetching data from DB
   useEffect(() => {
     fetchJobs()
+    refreshList()
   }, [])
+
+  const navigate = useNavigate()
 
   // get request to DB and updating state
   const fetchJobs = async() => {
     try {
-      const res = await fetch('//localhost:3001/joblist')
+      const res = await fetch(`//localhost:3001/joblist?user=${localStorage.getItem('userID')}`)
       const data = await res.json()
       setJobs(data) 
+      console.log(data)
     }
     catch (err){
       console.error(err)
@@ -37,7 +42,9 @@ const Joblist = () => {
       })  
       if(res.ok){
         
-        setJobs(jobs.filter((job) => job._id !== id))
+        // setJobs(jobs.filter((job) => job._id !== id))
+        fetchJobs()
+        refreshList()
       } else {
         console.log("Failed to delete!")
       }    
@@ -47,7 +54,7 @@ const Joblist = () => {
     }
   }
 
-  // Put request to update an individual job and includes a fetch to retrieve and populate the updated data
+  // Put request to update an individual job
   const updateJob =  async (job) => {
    
     try {
@@ -65,7 +72,8 @@ const Joblist = () => {
           stge2End: job.stage2End,
           stage3: job.stage3,
           stage3Start: job.stage3Start,
-          stage3End: job.stage3End
+          stage3End: job.stage3End,
+          userID: localStorage.getItem.userID
           
         })
       })
@@ -74,6 +82,7 @@ const Joblist = () => {
         console.log("Updated successfully")
         alert("Update successful!")
         fetchJobs()
+        refreshList()
       }
 
 

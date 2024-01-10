@@ -11,6 +11,7 @@ const CheekyNav = () => {
     setCookies("access_token", "")
     window.localStorage.removeItem("userID")
     navigate('/user')
+    window.location.reload(false);
 
   }
 

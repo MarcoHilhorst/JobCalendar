@@ -12,6 +12,7 @@ const JobInputs = ({ onAdd, btnText, job }) => {
   const [stage3Start, setStage3Start] = useState(job ? job.stage3Start : "")
   const [stage3End, setStage3End] = useState(job ? job.stage3End : "")
   const [id, setID] = useState(job ? job._id : '')
+  const [userID, setUserID] = useState(job? job.userID: 'test')
 
     
   // function that runs on submission of the form
@@ -35,7 +36,8 @@ const JobInputs = ({ onAdd, btnText, job }) => {
         stage3, 
         stage3Start, 
         stage3End,
-        id 
+        id,
+        userID
       }
     )
 
@@ -92,6 +94,11 @@ const JobInputs = ({ onAdd, btnText, job }) => {
     endDate3.current = shortenDate(endDate3.current)
      
   }, [stage3, stage3Start])
+
+  // Use effect trigger for the userID
+  useEffect(() => {
+    setUserID(localStorage.getItem('userID'))
+  })
 
   return (
     <form onSubmit={onSubmit} className="inputForm">
