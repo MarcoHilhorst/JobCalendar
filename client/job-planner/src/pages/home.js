@@ -45,6 +45,7 @@ const Home = ({ jobs, fetchJobs }) => {
     }
     
     mixedJobs.push(manufactureDates, assemblyDates, installDates)
+    console.log(mixedJobs)
   })
 
 

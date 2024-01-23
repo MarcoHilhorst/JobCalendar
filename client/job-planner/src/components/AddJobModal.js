@@ -10,7 +10,8 @@ const AddJobModal = ({ open, onClose, text, updateJob, job, fetchJobs}) => {
     <>
         <div className="overlay"></div>
         <div className='myModal'>
-            <AddJob fetchJobs={fetchJobs}/>
+            {/* <AddJob fetchJobs={fetchJobs}/> */}
+            <AddJob />
             <div className='buttonPosition'>
               <button onClick={onClose} className='btn'>Close</button>
             </div>

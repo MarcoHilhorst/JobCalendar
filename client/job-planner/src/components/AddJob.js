@@ -1,7 +1,8 @@
 import JobInputs from "./JobInputs"
 
 // Add task
-const AddJob = ({ fetchJobs }) => {
+// const AddJob = ({ fetchJobs }) => {
+  const AddJob = () => {
   
     const addJobToDB = async (task) => {
       if(!task.jobName){
@@ -19,7 +20,7 @@ const AddJob = ({ fetchJobs }) => {
         const result = await response.json()  
          result && alert('Job added!')
         console.log(result)
-         fetchJobs()
+        //  fetchJobs()
         
 
       } 

@@ -2,6 +2,7 @@ import { Calendar, momentLocalizer } from 'react-big-calendar'
 import withDragAndDrop from 'react-big-calendar/lib/addons/dragAndDrop'
 import 'react-big-calendar/lib/addons/dragAndDrop/styles.css'
 import moment from 'moment'
+import { useCallback, useState, useEffect } from 'react'
 
 
 const DnDCalendar = withDragAndDrop(Calendar)
@@ -24,12 +25,42 @@ const myEventsList = [
 ]
 
 
+
+
 const Dnd = () => {
+  const [events, setEvents] = useState(myEventsList)
+
+  const onChangeEventTime = (event) => {
+    // Map through the existing events and update the dragged event
+
+    const updatedEvents = events.map((e) =>
+      e.id === event.event.id
+        ? {
+            ...e,
+            start: event.start,
+            end: event.end,
+          }
+        : e
+    );
+
+    // Set the updated events to the state
+    setEvents(updatedEvents);
+  };
+
+
+  useEffect(() => {
+    // Log the updated state after the render
+    console.log(events);
+  }, [events])
+
+
   return (
     <DnDCalendar 
         localizer={localizer}
-        events={myEventsList}
+        events={events}
         draggableAccessor={(event)=> true}
+        onEventDrop={onChangeEventTime}
+        onEventResize={onChangeEventTime}
     />
   )
 }
